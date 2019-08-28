@@ -27,13 +27,13 @@ public class A1Adept {
 		scan.close();
 		int bigCusInd = 0;
 		int smlCusInd = 0;
-		double totalSale = 0;
-		for(int i =0; i < customers.length; i++) {
+		double totalSale = customers[0].Total();
+		for(int i =1; i < customers.length; i++) {
 			totalSale = customers[i].Total() + totalSale;
-			if( i>0 && customers[i].Total()>customers[i-1].Total()) {
+			if( customers[i].Total()>customers[bigCusInd].Total()) {
 				bigCusInd = i;
 			}
-			if( i>0 && customers[i].Total()<customers[i-1].Total()) {
+			if( customers[i].Total()<customers[smlCusInd].Total() ) {
 				smlCusInd = i;
 			}
 			
