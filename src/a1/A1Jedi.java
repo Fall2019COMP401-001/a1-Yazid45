@@ -5,10 +5,29 @@ import java.util.Scanner;
 public class A1Jedi {
 
 	public static void main(String[] args) {
-		
+
 		Scanner scan = new Scanner(System.in);
 
-		// Your code follows here.
-		
+		Item[] sales = new Item[scan.nextInt()];
+		int[] buyers = new int[sales.length];
+		for (int i = 0; i < sales.length; i++) {
+			sales[i] = new Item(scan.next(), scan.nextDouble());
+		}
+		Customer[] customers = new Customer[scan.nextInt()];
+		for (int i = 0; i < customers.length; i++) {
+			customers[i] = new Customer(scan.next(), scan.next());
+			customers[i].List(scan.nextInt());
+			for (int n = 0; n < customers[i].list.length; n++) {
+				int quantity = scan.nextInt();
+				int pHolder = customers[i].shop(n, quantity, scan.next(), sales);
+				buyers[pHolder]++;
+				sales[pHolder].quantity += quantity;
+			}
+		}
+		scan.close();
+
+		for (int i = 0; i < sales.length; i++) {
+			System.out.println(sales[i].sale(buyers[i]));
+		}
 	}
 }
