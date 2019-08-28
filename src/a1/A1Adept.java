@@ -39,7 +39,7 @@ public class A1Adept {
 			
 		}
 		System.out.println("Biggest: "+customers[bigCusInd].Receipt(2));
-		System.out.println("Biggest: "+customers[smlCusInd].Receipt(2));
+		System.out.println("Smallest: "+customers[smlCusInd].Receipt(2));
 		System.out.println("Average: "+String.format("%.2f", totalSale/customers.length));
 
 
