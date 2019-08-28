@@ -20,9 +20,13 @@ public class A1Jedi {
 			for (int n = 0; n < customers[i].list.length; n++) {
 				int quantity = scan.nextInt();
 				int pHolder = customers[i].shop(n, quantity, scan.next(), sales);
-				buyers[pHolder]++;
 				sales[pHolder].quantity += quantity;
 			}
+		}
+		for (int n = 0 ; n<customers.length; n++){
+			 for (int i = 0; i < buyers.length; i++){
+			buyers[i]+=customers[n].onList(sales[i]);
+		}
 		}
 		scan.close();
 

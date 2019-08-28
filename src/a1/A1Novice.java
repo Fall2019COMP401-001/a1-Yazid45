@@ -58,6 +58,15 @@ class Customer {
 		}
 		return boughtInd;
 	}
+	int onList(Item listed) {
+		int onList = 0;
+		for(int i=0; i < this.list.length; i++) {
+			if(this.list[i].name.contentEquals(listed.name))
+				onList = 1;
+			
+		}
+		return onList;
+	}
 	String Receipt(int Case) {
 		String receipt = "";
 		switch (Case) {
